@@ -58,8 +58,8 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
 public abstract class PanelView extends FrameLayout {
-    public static final boolean DEBUG = true;//PanelBar.DEBUG;
-    public static final boolean DEBUG_Motion = true;//
+    public static final boolean DEBUG = PanelBar.DEBUG;
+    public static final boolean DEBUG_Motion = false;
     public static final String TAG = PanelView.class.getSimpleName();
     private static final int INITIAL_OPENING_PEEK_DURATION = 200;
     private static final int PEEK_ANIMATION_DURATION = 360;

@@ -81,7 +81,7 @@ public class NotificationPanelView extends PanelView implements
         KeyguardAffordanceHelper.Callback, NotificationStackScrollLayout.OnEmptySpaceClickListener,
         OnHeadsUpChangedListener, QS.HeightListener {
 
-    private static final boolean DEBUG = false;
+    private static final boolean DEBUG = true;
 
     public static final String TAG = NotificationPanelView.class.getSimpleName();
 
@@ -697,6 +697,8 @@ public class NotificationPanelView extends PanelView implements
         RuntimeException notificationpanelviewononInterceptTouchEvent = new RuntimeException("notificationpanelviewononInterceptTouchEvent");
         notificationpanelviewononInterceptTouchEvent.fillInStackTrace();
         Log.w("notificationpanelviewononInterceptTouchEvent", "Called: " , notificationpanelviewononInterceptTouchEvent);
+
+        //mBlockTouches 在
         if (mBlockTouches || mQs.isCustomizing()) {
             return false;
         }
@@ -785,6 +787,7 @@ public class NotificationPanelView extends PanelView implements
 
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
+                log("onQsIntercept,ACTION_UP");
                 trackMovement(event);
                 if (mQsTracking) {
                     flingQsWithCurrentVelocity(y,
@@ -878,6 +881,7 @@ public class NotificationPanelView extends PanelView implements
         RuntimeException notificationpanelviewonTouchEvent = new RuntimeException("notificationpanelviewonTouchEvent");
         notificationpanelviewonTouchEvent.fillInStackTrace();
         Log.w("notificationpanelviewonTouchEvent", "Called: " , notificationpanelviewonTouchEvent);
+
         if (mBlockTouches || (mQs != null && mQs.isCustomizing())) {
             return false;
         }
@@ -1164,11 +1168,15 @@ public class NotificationPanelView extends PanelView implements
 
     public void setBarState(int statusBarState, boolean keyguardFadingAway,
             boolean goingToFullShade) {
-                log("setBarState,statusBarState="+statusBarState+",keyguardFadingAway="+keyguardFadingAway+",goingToFullShade="+goingToFullShade);
+            log("setBarState,statusBarState="+statusBarState+",keyguardFadingAway="+keyguardFadingAway+",goingToFullShade="+goingToFullShade);
+        //正常滑动解锁时：statusBarState=0,keyguardFadingAway=true,goingToFullShade=false
+        RuntimeException setBarState = new RuntimeException("setBarState");
+        setBarState.fillInStackTrace();
+        Log.w(TAG, "Called: " , setBarState);
         int oldState = mStatusBarState;
         boolean keyguardShowing = statusBarState == StatusBarState.KEYGUARD;
-        setKeyguardStatusViewVisibility(statusBarState, keyguardFadingAway, goingToFullShade);
-        setKeyguardBottomAreaVisibility(statusBarState, goingToFullShade);
+        setKeyguardStatusViewVisibility(statusBarState, keyguardFadingAway, goingToFullShade);//更新锁屏界面上半部分的显示
+        setKeyguardBottomAreaVisibility(statusBarState, goingToFullShade);//更新锁屏界面下半部分的显示
 
         mStatusBarState = statusBarState;
         mKeyguardShowing = keyguardShowing;

@@ -31,15 +31,20 @@ import com.android.systemui.Interpolators;
 import com.android.systemui.R;
 import com.android.systemui.classifier.FalsingManager;
 import com.android.systemui.statusbar.phone.StatusBar;
+import com.android.systemui.statusbar.phone.PanelView;
+import android.util.Log;
 
 /**
  * A utility class to enable the downward swipe on the lockscreen to go to the full shade and expand
  * the notification where the drag started.
+ * 锁屏界面下拉通知栏事件处理
  */
 public class DragDownHelper implements Gefingerpoken {
 
     private static final float RUBBERBAND_FACTOR_EXPANDABLE = 0.5f;
     private static final float RUBBERBAND_FACTOR_STATIC = 0.15f;
+    public static final String TAG = "DragDownHelper";
+    public static final boolean DEBUG_Motion = PanelView.DEBUG_Motion;
 
     private static final int SPRING_BACK_ANIMATION_LENGTH_MS = 375;
 
@@ -59,6 +64,7 @@ public class DragDownHelper implements Gefingerpoken {
 
     public DragDownHelper(Context context, View host, ExpandHelper.Callback callback,
             DragDownCallback dragDownCallback) {
+                log("DragDownHelper");
         mMinDragDistance = context.getResources().getDimensionPixelSize(
                 R.dimen.keyguard_drag_down_min_distance);
         mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
@@ -70,11 +76,13 @@ public class DragDownHelper implements Gefingerpoken {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
+        log("onInterceptTouchEvent");
         final float x = event.getX();
         final float y = event.getY();
 
         switch (event.getActionMasked()) {
             case MotionEvent.ACTION_DOWN:
+            log("onInterceptTouchEvent,ACTION_DOWN");
                 mDraggedFarEnough = false;
                 mDraggingDown = false;
                 mStartingChild = null;
@@ -83,6 +91,7 @@ public class DragDownHelper implements Gefingerpoken {
                 break;
 
             case MotionEvent.ACTION_MOVE:
+            log("onInterceptTouchEvent,ACTION_MOVE");
                 final float h = y - mInitialTouchY;
                 if (h > mTouchSlop && h > Math.abs(x - mInitialTouchX)) {
                     mFalsingManager.onNotificatonStartDraggingDown();
@@ -100,6 +109,7 @@ public class DragDownHelper implements Gefingerpoken {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        log("onTouchEvent");
         if (!mDraggingDown) {
             return false;
         }
@@ -108,6 +118,7 @@ public class DragDownHelper implements Gefingerpoken {
 
         switch (event.getActionMasked()) {
             case MotionEvent.ACTION_MOVE:
+                log("onTouchEvent,ACTION_MOVE");
                 mLastHeight = y - mInitialTouchY;
                 captureStartingChild(mInitialTouchX, mInitialTouchY);
                 if (mStartingChild != null) {
@@ -128,6 +139,7 @@ public class DragDownHelper implements Gefingerpoken {
                 }
                 return true;
             case MotionEvent.ACTION_UP:
+                log("onTouchEvent,ACTION_UP");
                 if (!isFalseTouch() && mDragDownCallback.onDraggedDown(mStartingChild,
                         (int) (y - mInitialTouchY))) {
                     if (mStartingChild == null) {
@@ -143,6 +155,7 @@ public class DragDownHelper implements Gefingerpoken {
                 }
                 break;
             case MotionEvent.ACTION_CANCEL:
+                log("onTouchEvent,ACTION_CANCEL");
                 stopDragging();
                 return false;
         }
@@ -150,6 +163,7 @@ public class DragDownHelper implements Gefingerpoken {
     }
 
     private boolean isFalseTouch() {
+        log("isFalseTouch");
         if (!mDragDownCallback.isFalsingCheckNeeded()) {
             return false;
         }
@@ -157,6 +171,7 @@ public class DragDownHelper implements Gefingerpoken {
     }
 
     private void captureStartingChild(float x, float y) {
+        log("captureStartingChild");
         if (mStartingChild == null) {
             mStartingChild = findView(x, y);
             if (mStartingChild != null) {
@@ -166,6 +181,7 @@ public class DragDownHelper implements Gefingerpoken {
     }
 
     private void handleExpansion(float heightDelta, ExpandableView child) {
+        log("handleExpansion");
         if (heightDelta < 0) {
             heightDelta = 0;
         }
@@ -185,6 +201,7 @@ public class DragDownHelper implements Gefingerpoken {
     }
 
     private void cancelExpansion(final ExpandableView child) {
+        log("cancelExpansion,child");
         if (child.getActualHeight() == child.getCollapsedHeight()) {
             mCallback.setUserLockedChild(child, false);
             return;
@@ -203,6 +220,7 @@ public class DragDownHelper implements Gefingerpoken {
     }
 
     private void cancelExpansion() {
+        log("cancelExpansion");
         ValueAnimator anim = ValueAnimator.ofFloat(mLastHeight, 0);
         anim.setInterpolator(Interpolators.FAST_OUT_SLOW_IN);
         anim.setDuration(SPRING_BACK_ANIMATION_LENGTH_MS);
@@ -216,6 +234,7 @@ public class DragDownHelper implements Gefingerpoken {
     }
 
     private void stopDragging() {
+        log("stopDragging");
         mFalsingManager.onNotificatonStopDraggingDown();
         if (mStartingChild != null) {
             cancelExpansion(mStartingChild);
@@ -228,6 +247,7 @@ public class DragDownHelper implements Gefingerpoken {
     }
 
     private ExpandableView findView(float x, float y) {
+        log("findView,x="+x+",y="+y);
         mHost.getLocationOnScreen(mTemp2);
         x += mTemp2[0];
         y += mTemp2[1];
@@ -235,6 +255,7 @@ public class DragDownHelper implements Gefingerpoken {
     }
 
     public boolean isDraggingDown() {
+        log("isDraggingDown");
         return mDraggingDown;
     }
 
@@ -254,5 +275,9 @@ public class DragDownHelper implements Gefingerpoken {
         void onTouchSlopExceeded();
         void setEmptyDragAmount(float amount);
         boolean isFalsingCheckNeeded();
+    }
+
+    private static void log(String msg) {
+        if (DEBUG_Motion) Log.d(TAG, msg);
     }
 }

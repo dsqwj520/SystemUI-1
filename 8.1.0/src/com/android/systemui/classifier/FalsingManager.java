@@ -36,6 +36,8 @@ import com.android.systemui.UiOffloadThread;
 import com.android.systemui.analytics.DataCollector;
 import com.android.systemui.statusbar.StatusBarState;
 import com.android.systemui.util.AsyncSensorManager;
+import com.android.systemui.statusbar.phone.PanelView;
+import android.util.Log;
 
 import java.io.PrintWriter;
 
@@ -44,9 +46,13 @@ import java.io.PrintWriter;
  * DataCollector and HumanInteractionClassifier.
  *
  * It does not collect touch events when the bouncer shows up.
+ * 
+ * 锁屏界面监听 触摸/sensor/phone事件，当滑动到图案解锁/PIN码/密码解锁时，不做此处理
  */
 public class FalsingManager implements SensorEventListener {
     private static final String ENFORCE_BOUNCER = "falsing_manager_enforce_bouncer";
+    public static final String TAG = "DragDownHelper";
+    public static final boolean DEBUG_Motion = PanelView.DEBUG_Motion;
 
     private static final int[] CLASSIFIER_SENSORS = new int[] {
             Sensor.TYPE_PROXIMITY,
@@ -87,6 +93,7 @@ public class FalsingManager implements SensorEventListener {
     };
 
     private FalsingManager(Context context) {
+        log("FalsingManager,init");
         mContext = context;
         mSensorManager = Dependency.get(AsyncSensorManager.class);
         mAccessibilityManager = context.getSystemService(AccessibilityManager.class);
@@ -104,6 +111,7 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public static FalsingManager getInstance(Context context) {
+        log("getInstance");
         if (sInstance == null) {
             sInstance = new FalsingManager(context);
         }
@@ -111,11 +119,13 @@ public class FalsingManager implements SensorEventListener {
     }
 
     private void updateConfiguration() {
+        log("updateConfiguration");
         mEnforceBouncer = 0 != Settings.Secure.getInt(mContext.getContentResolver(),
                 ENFORCE_BOUNCER, 0);
     }
 
     private boolean shouldSessionBeActive() {
+        log("shouldSessionBeActive");
         if (FalsingLog.ENABLED && FalsingLog.VERBOSE)
             FalsingLog.v("shouldBeActive", new StringBuilder()
                     .append("enabled=").append(isEnabled() ? 1 : 0)
@@ -127,6 +137,7 @@ public class FalsingManager implements SensorEventListener {
     }
 
     private boolean sessionEntrypoint() {
+        log("sessionEntrypoint");
         if (!mSessionActive && shouldSessionBeActive()) {
             onSessionStart();
             return true;
@@ -135,6 +146,7 @@ public class FalsingManager implements SensorEventListener {
     }
 
     private void sessionExitpoint(boolean force) {
+        log("sessionExitpoint,force="+force);
         if (mSessionActive && (force || !shouldSessionBeActive())) {
             mSessionActive = false;
 
@@ -146,6 +158,7 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public void updateSessionActive() {
+        log("updateSessionActive");
         if (shouldSessionBeActive()) {
             sessionEntrypoint();
         } else {
@@ -154,6 +167,7 @@ public class FalsingManager implements SensorEventListener {
     }
 
     private void onSessionStart() {
+        log("onSessionStart");
         if (FalsingLog.ENABLED) {
             FalsingLog.i("onSessionStart", "classifierEnabled=" + isClassiferEnabled());
             clearPendingWtf();
@@ -170,6 +184,7 @@ public class FalsingManager implements SensorEventListener {
     }
 
     private void registerSensors(int [] sensors) {
+        log("registerSensors");
         for (int sensorType : sensors) {
             Sensor s = mSensorManager.getDefaultSensor(sensorType);
             if (s != null) {
@@ -183,10 +198,12 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public boolean isClassiferEnabled() {
+        log("isClassiferEnabled");
         return mHumanInteractionClassifier.isEnabled();
     }
 
     private boolean isEnabled() {
+        log("isEnabled");
         return mHumanInteractionClassifier.isEnabled() || mDataCollector.isEnabled();
     }
 
@@ -194,6 +211,7 @@ public class FalsingManager implements SensorEventListener {
      * @return true if the classifier determined that this is not a human interacting with the phone
      */
     public boolean isFalseTouch() {
+        log("isFalseTouch");
         if (FalsingLog.ENABLED) {
             // We're getting some false wtfs from touches that happen after the device went
             // to sleep. Only report missing sessions that happen when the device is interactive.
@@ -237,6 +255,7 @@ public class FalsingManager implements SensorEventListener {
     }
 
     private void clearPendingWtf() {
+        log("clearPendingWtf");
         if (mPendingWtf != null) {
             mHandler.removeCallbacks(mPendingWtf);
             mPendingWtf = null;
@@ -245,25 +264,30 @@ public class FalsingManager implements SensorEventListener {
 
     @Override
     public synchronized void onSensorChanged(SensorEvent event) {
+        log("onSensorChanged");
         mDataCollector.onSensorChanged(event);
         mHumanInteractionClassifier.onSensorChanged(event);
     }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        log("onAccuracyChanged");
         mDataCollector.onAccuracyChanged(sensor, accuracy);
     }
 
     public boolean shouldEnforceBouncer() {
+        log("shouldEnforceBouncer");
         return mEnforceBouncer;
     }
 
     public void setShowingAod(boolean showingAod) {
+        log("setShowingAod,showingAod="+showingAod);
         mShowingAod = showingAod;
         updateSessionActive();
     }
 
     public void setStatusBarState(int state) {
+        log("setStatusBarState,state="+state);
         if (FalsingLog.ENABLED) {
             FalsingLog.i("setStatusBarState", new StringBuilder()
                     .append("from=").append(StatusBarState.toShortString(mState))
@@ -275,6 +299,7 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public void onScreenTurningOn() {
+        log("onScreenTurningOn");
         if (FalsingLog.ENABLED) {
             FalsingLog.i("onScreenTurningOn", new StringBuilder()
                     .append("from=").append(mScreenOn ? 1 : 0)
@@ -288,6 +313,7 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public void onScreenOnFromTouch() {
+        log("onScreenOnFromTouch");
         if (FalsingLog.ENABLED) {
             FalsingLog.i("onScreenOnFromTouch", new StringBuilder()
                     .append("from=").append(mScreenOn ? 1 : 0)
@@ -300,6 +326,7 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public void onScreenOff() {
+        log("onScreenOff");
         if (FalsingLog.ENABLED) {
             FalsingLog.i("onScreenOff", new StringBuilder()
                     .append("from=").append(mScreenOn ? 1 : 0)
@@ -311,6 +338,7 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public void onSucccessfulUnlock() {
+        log("onSucccessfulUnlock");
         if (FalsingLog.ENABLED) {
             FalsingLog.i("onSucccessfulUnlock", "");
         }
@@ -318,6 +346,7 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public void onBouncerShown() {
+        log("onBouncerShown");
         if (FalsingLog.ENABLED) {
             FalsingLog.i("onBouncerShown", new StringBuilder()
                     .append("from=").append(mBouncerOn ? 1 : 0)
@@ -330,6 +359,7 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public void onBouncerHidden() {
+        log("onBouncerHidden");
         if (FalsingLog.ENABLED) {
             FalsingLog.i("onBouncerHidden", new StringBuilder()
                     .append("from=").append(mBouncerOn ? 1 : 0)
@@ -342,6 +372,7 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public void onQsDown() {
+        log("onQsDown");
         if (FalsingLog.ENABLED) {
             FalsingLog.i("onQsDown", "");
         }
@@ -350,10 +381,12 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public void setQsExpanded(boolean expanded) {
+        log("setQsExpanded,expanded="+expanded);
         mDataCollector.setQsExpanded(expanded);
     }
 
     public void onTrackingStarted() {
+        log("onTrackingStarted");
         if (FalsingLog.ENABLED) {
             FalsingLog.i("onTrackingStarted", "");
         }
@@ -362,14 +395,17 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public void onTrackingStopped() {
+        log("onTrackingStopped");
         mDataCollector.onTrackingStopped();
     }
 
     public void onNotificationActive() {
+        log("onNotificationActive");
         mDataCollector.onNotificationActive();
     }
 
     public void onNotificationDoubleTap(boolean accepted, float dx, float dy) {
+        log("onNotificationDoubleTap,accepted="+accepted+",dx="+dx+",dy="+dy);
         if (FalsingLog.ENABLED) {
             FalsingLog.i("onNotificationDoubleTap", "accepted=" + accepted
                     + " dx=" + dx + " dy=" + dy + " (px)");
@@ -378,10 +414,12 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public void setNotificationExpanded() {
+        log("setNotificationExpanded");
         mDataCollector.setNotificationExpanded();
     }
 
     public void onNotificatonStartDraggingDown() {
+        log("onNotificatonStartDraggingDown");
         if (FalsingLog.ENABLED) {
             FalsingLog.i("onNotificatonStartDraggingDown", "");
         }
@@ -390,14 +428,17 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public void onNotificatonStopDraggingDown() {
+        log("onNotificatonStopDraggingDown");
         mDataCollector.onNotificatonStopDraggingDown();
     }
 
     public void onNotificationDismissed() {
+        log("onNotificationDismissed");
         mDataCollector.onNotificationDismissed();
     }
 
     public void onNotificatonStartDismissing() {
+        log("onNotificatonStartDismissing");
         if (FalsingLog.ENABLED) {
             FalsingLog.i("onNotificatonStartDismissing", "");
         }
@@ -406,18 +447,22 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public void onNotificatonStopDismissing() {
+        log("onNotificatonStopDismissing");
         mDataCollector.onNotificatonStopDismissing();
     }
 
     public void onCameraOn() {
+        log("onCameraOn");
         mDataCollector.onCameraOn();
     }
 
     public void onLeftAffordanceOn() {
+        log("onLeftAffordanceOn");
         mDataCollector.onLeftAffordanceOn();
     }
 
     public void onAffordanceSwipingStarted(boolean rightCorner) {
+        log("onAffordanceSwipingStarted,rightCorner="+rightCorner);
         if (FalsingLog.ENABLED) {
             FalsingLog.i("onAffordanceSwipingStarted", "");
         }
@@ -430,22 +475,27 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public void onAffordanceSwipingAborted() {
+        log("onAffordanceSwipingAborted");
         mDataCollector.onAffordanceSwipingAborted();
     }
 
     public void onUnlockHintStarted() {
+        log("onUnlockHintStarted");
         mDataCollector.onUnlockHintStarted();
     }
 
     public void onCameraHintStarted() {
+        log("onCameraHintStarted");
         mDataCollector.onCameraHintStarted();
     }
 
     public void onLeftAffordanceHintStarted() {
+        log("onLeftAffordanceHintStarted");
         mDataCollector.onLeftAffordanceHintStarted();
     }
 
     public void onTouchEvent(MotionEvent event, int width, int height) {
+        log("onTouchEvent,width="+width+",height="+height);
         if (mSessionActive && !mBouncerOn) {
             mDataCollector.onTouchEvent(event, width, height);
             mHumanInteractionClassifier.onTouchEvent(event);
@@ -463,6 +513,7 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public Uri reportRejectedTouch() {
+        log("reportRejectedTouch");
         if (mDataCollector.isEnabled()) {
             return mDataCollector.reportRejectedTouch();
         }
@@ -470,6 +521,11 @@ public class FalsingManager implements SensorEventListener {
     }
 
     public boolean isReportingEnabled() {
+        log("isReportingEnabled");
         return mDataCollector.isReportingEnabled();
+    }
+
+    private static void log(String msg) {
+        if (DEBUG_Motion) Log.d(TAG, msg);
     }
 }

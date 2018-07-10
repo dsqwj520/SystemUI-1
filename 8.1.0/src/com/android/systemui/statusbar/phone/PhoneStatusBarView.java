@@ -23,6 +23,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
+import android.util.Log;
 
 import com.android.systemui.BatteryMeterView;
 import com.android.systemui.DejankUtils;

@@ -33,6 +33,7 @@ import com.android.systemui.statusbar.KeyguardAffordanceView;
 
 /**
  * A touch handler of the keyguard which is responsible for launching phone and camera affordances.
+ * 处理锁屏界面，滑动Phone和Camera图标
  */
 public class KeyguardAffordanceHelper {
 

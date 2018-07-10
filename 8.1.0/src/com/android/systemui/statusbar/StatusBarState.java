@@ -18,27 +18,31 @@ package com.android.systemui.statusbar;
 
 /**
  * Class to encapsulate all possible status bar states regarding Keyguard.
+ * StatusBarState类用于封装在锁屏界面时Statusbar的所有可能的状态
  */
 public class StatusBarState {
 
     /**
      * The status bar is in the "normal" shade mode.
      */
-    public static final int SHADE = 0;
+    public static final int SHADE = 0; //此模式下，已经解锁，Keyguard的StatusBar处于隐藏状态，不显示，此时的状态栏显示的正常的StatusBar
 
     /**
      * Status bar is currently the Keyguard.
      */
-    public static final int KEYGUARD = 1;
+    public static final int KEYGUARD = 1;//锁屏界面的StatusBar
 
     /**
      * Status bar is in the special mode, where it is fully interactive but still locked. So
      * dismissing the shade will still show the bouncer.
+     * This statetion is :the user dragged down on the lockscreen
+     * 用户在锁屏界面下拉状态栏，此时，状态下拉
      */
-    public static final int SHADE_LOCKED = 2;
+    public static final int SHADE_LOCKED = 2; 
 
     /**
      * Status bar is locked and shows the full screen user switcher.
+     * 
      */
     public static final int FULLSCREEN_USER_SWITCHER = 3;
 

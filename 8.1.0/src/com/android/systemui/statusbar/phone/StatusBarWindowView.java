@@ -52,6 +52,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.WindowManagerGlobal;
 import android.widget.FrameLayout;
+import android.util.Log;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.view.FloatingActionMode;
@@ -66,6 +67,7 @@ import com.android.systemui.statusbar.stack.NotificationStackScrollLayout;
 public class StatusBarWindowView extends FrameLayout {
     public static final String TAG = "StatusBarWindowView";
     public static final boolean DEBUG = StatusBar.DEBUG;
+    public static final boolean DEBUG_Motion = PanelView.DEBUG_Motion;
 
     private DragDownHelper mDragDownHelper;
     private DoubleTapHelper mDoubleTapHelper;
@@ -91,6 +93,7 @@ public class StatusBarWindowView extends FrameLayout {
 
     public StatusBarWindowView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        log("StatusBarWindowView,init");
         setMotionEventSplittingEnabled(false);
         mTransparentSrcPaint.setColor(0);
         mTransparentSrcPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
@@ -103,6 +106,7 @@ public class StatusBarWindowView extends FrameLayout {
 
     @Override
     protected boolean fitSystemWindows(Rect insets) {
+        log("fitSystemWindows");
         if (getFitsSystemWindows()) {
             boolean paddingChanged = insets.top != getPaddingTop()
                     || insets.bottom != getPaddingBottom();
@@ -139,6 +143,7 @@ public class StatusBarWindowView extends FrameLayout {
     }
 
     private void applyMargins() {
+        log("applyMargins");
         final int N = getChildCount();
         for (int i = 0; i < N; i++) {
             View child = getChildAt(i);
@@ -167,6 +172,7 @@ public class StatusBarWindowView extends FrameLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
+        log("onFinishInflate");
         mStackScrollLayout = (NotificationStackScrollLayout) findViewById(
                 R.id.notification_stack_scroller);
         mNotificationPanel = (NotificationPanelView) findViewById(R.id.notification_panel);
@@ -176,24 +182,28 @@ public class StatusBarWindowView extends FrameLayout {
     @Override
     public void onViewAdded(View child) {
         super.onViewAdded(child);
+        log("onViewAdded");
         if (child.getId() == R.id.brightness_mirror) {
             mBrightnessMirror = child;
         }
     }
 
     public void setService(StatusBar service) {
+        log("setService");
         mService = service;
         setDragDownHelper(new DragDownHelper(getContext(), this, mStackScrollLayout, mService));
     }
 
     @VisibleForTesting
     void setDragDownHelper(DragDownHelper dragDownHelper) {
+        log("setDragDownHelper");
         mDragDownHelper = dragDownHelper;
     }
 
     @Override
     protected void onAttachedToWindow () {
         super.onAttachedToWindow();
+        log("onAttachedToWindow");
 
         // We need to ensure that our window doesn't suffer from overdraw which would normally
         // occur if our window is translucent. Since we are drawing the whole window anyway with
@@ -212,6 +222,7 @@ public class StatusBarWindowView extends FrameLayout {
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
+        log("dispatchKeyEvent,event="+event.getKeyCode());
         if (mService.interceptMediaKey(event)) {
             return true;
         }
@@ -247,12 +258,14 @@ public class StatusBarWindowView extends FrameLayout {
     }
 
     public void setTouchActive(boolean touchActive) {
+        log("setTouchActive,touchActive="+touchActive);
         mTouchActive = touchActive;
         mStackScrollLayout.setTouchActive(touchActive);
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+        log("dispatchTouchEvent");
         boolean isDown = ev.getActionMasked() == MotionEvent.ACTION_DOWN;
         boolean isCancel = ev.getActionMasked() == MotionEvent.ACTION_CANCEL;
         if (!isCancel && mService.shouldIgnoreTouch()) {
@@ -292,6 +305,7 @@ public class StatusBarWindowView extends FrameLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
+        log("onInterceptTouchEvent");
         if (mService.isDozing() && !mStackScrollLayout.hasPulsingNotifications()) {
             // Capture all touch events in always-on.
             return true;
@@ -319,6 +333,7 @@ public class StatusBarWindowView extends FrameLayout {
 
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
+        log("onTouchEvent");
         boolean handled = false;
         if (mService.isDozing()) {
             mDoubleTapHelper.onTouchEvent(ev);
@@ -342,6 +357,7 @@ public class StatusBarWindowView extends FrameLayout {
     @Override
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        log("onDraw");
         if (mService.isScrimSrcModeEnabled()) {
             // We need to ensure that our window is always drawn fully even when we have paddings,
             // since we simulate it to be opaque.
@@ -372,12 +388,14 @@ public class StatusBarWindowView extends FrameLayout {
     }
 
     public void cancelExpandHelper() {
+        log("cancelExpandHelper");
         if (mStackScrollLayout != null) {
             mStackScrollLayout.cancelExpandHelper();
         }
     }
 
     public void cancelCurrentTouch() {
+        log("cancelCurrentTouch");
         if (mTouchActive) {
             final long now = SystemClock.uptimeMillis();
             MotionEvent event = MotionEvent.obtain(now, now,
@@ -410,6 +428,7 @@ public class StatusBarWindowView extends FrameLayout {
     @Override
     public ActionMode startActionModeForChild(View originalView, ActionMode.Callback callback,
             int type) {
+                log("startActionModeForChild");
         if (type == ActionMode.TYPE_FLOATING) {
             return startActionMode(originalView, callback, type);
         }
@@ -418,6 +437,7 @@ public class StatusBarWindowView extends FrameLayout {
 
     private ActionMode createFloatingActionMode(
             View originatingView, ActionMode.Callback2 callback) {
+                log("createFloatingActionMode");
         if (mFloatingActionMode != null) {
             mFloatingActionMode.finish();
         }
@@ -438,6 +458,7 @@ public class StatusBarWindowView extends FrameLayout {
     }
 
     private void setHandledFloatingActionMode(ActionMode mode) {
+        log("setHandledFloatingActionMode");
         mFloatingActionMode = mode;
         mFloatingActionMode.invalidate();  // Will show the floating toolbar if necessary.
         mFloatingActionModeOriginatingView.getViewTreeObserver()
@@ -445,6 +466,7 @@ public class StatusBarWindowView extends FrameLayout {
     }
 
     private void cleanupFloatingActionModeViews() {
+        log("cleanupFloatingActionModeViews");
         if (mFloatingToolbar != null) {
             mFloatingToolbar.dismiss();
             mFloatingToolbar = null;
@@ -461,6 +483,7 @@ public class StatusBarWindowView extends FrameLayout {
 
     private ActionMode startActionMode(
             View originatingView, ActionMode.Callback callback, int type) {
+                log("startActionMode,type="+type);
         ActionMode.Callback2 wrappedCallback = new ActionModeCallback2Wrapper(callback);
         ActionMode mode = createFloatingActionMode(originatingView, wrappedCallback);
         if (mode != null && wrappedCallback.onCreateActionMode(mode, mode.getMenu())) {
@@ -484,14 +507,17 @@ public class StatusBarWindowView extends FrameLayout {
 
         public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
             requestFitSystemWindows();
+            log("onPrepareActionMode");
             return mWrapped.onPrepareActionMode(mode, menu);
         }
 
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+            log("onActionItemClicked");
             return mWrapped.onActionItemClicked(mode, item);
         }
 
         public void onDestroyActionMode(ActionMode mode) {
+            log("onDestroyActionMode");
             mWrapped.onDestroyActionMode(mode);
             if (mode == mFloatingActionMode) {
                 cleanupFloatingActionModeViews();
@@ -502,12 +528,17 @@ public class StatusBarWindowView extends FrameLayout {
 
         @Override
         public void onGetContentRect(ActionMode mode, View view, Rect outRect) {
+            log("onGetContentRect");
             if (mWrapped instanceof ActionMode.Callback2) {
                 ((ActionMode.Callback2) mWrapped).onGetContentRect(mode, view, outRect);
             } else {
                 super.onGetContentRect(mode, view, outRect);
             }
         }
+    }
+
+    private static void log(String msg) {
+        if (DEBUG_Motion) Log.d(TAG, msg);
     }
 
     /**

@@ -309,7 +309,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     private static final String NOTIFICATION_UNLOCKED_BY_WORK_CHALLENGE_ACTION
             = "com.android.systemui.statusbar.work_challenge_unlocked_notification_action";
     public static final String TAG = "StatusBar";
-    public static final boolean DEBUG = false;
+    public static final boolean DEBUG = true;//false;
     public static final boolean SPEW = false;
     public static final boolean DUMPTRUCK = true; // extra dumpsys info
     public static final boolean DEBUG_GESTURES = false;
@@ -4848,6 +4848,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         // If we're visible and switched to SHADE_LOCKED (the user dragged
         // down on the lockscreen), clear notification LED, vibration,
         // ringing.
+        // SHADE_LOCKED模式时，需要清楚通知灯，震动和铃声
         // Other transitions are covered in handleVisibleToUserChanged().
         if (state != mState && mVisible && (state == StatusBarState.SHADE_LOCKED
                 || (state == StatusBarState.SHADE && isGoingToNotificationShade()))) {

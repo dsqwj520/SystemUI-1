@@ -48,12 +48,10 @@ import java.util.Locale;
  *  adb shell setprop debug.falsing_log_size 200
  */
 public class FalsingLog {
-    public static final boolean ENABLED = SystemProperties.getBoolean("debug.falsing_log",
-            Build.IS_DEBUGGABLE);
-    private static final boolean LOGCAT = SystemProperties.getBoolean("debug.falsing_logcat",
-            false);
+    public static final boolean ENABLED = true;//SystemProperties.getBoolean("debug.falsing_log",Build.IS_DEBUGGABLE);
+    private static final boolean LOGCAT = true;//SystemProperties.getBoolean("debug.falsing_logcat",false);
 
-    public static final boolean VERBOSE = false;
+    public static final boolean VERBOSE = true;//false;
 
     private static final int MAX_SIZE = SystemProperties.getInt("debug.falsing_log_size", 100);
 

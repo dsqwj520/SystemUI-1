@@ -29,6 +29,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.WindowInsets;
 import android.view.accessibility.AccessibilityEvent;
+import android.util.Log;
 
 import com.android.internal.widget.LockPatternUtils;
 import com.android.keyguard.KeyguardHostView;

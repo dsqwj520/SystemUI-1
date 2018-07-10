@@ -58,8 +58,8 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
 public abstract class PanelView extends FrameLayout {
-    public static final boolean DEBUG = PanelBar.DEBUG;
-    public static final boolean DEBUG_Motion = false;
+    public static final boolean DEBUG = true;//PanelBar.DEBUG;
+    public static final boolean DEBUG_Motion = true;//
     public static final String TAG = PanelView.class.getSimpleName();
     private static final int INITIAL_OPENING_PEEK_DURATION = 200;
     private static final int PEEK_ANIMATION_DURATION = 360;
@@ -228,6 +228,12 @@ public abstract class PanelView extends FrameLayout {
                 R.bool.config_vibrateOnIconAnimation);
     }
 
+    /*
+    * 导入xml配置文件中配置的属性值
+    * mTouchSlop 表示的是，最小移动距离，一般设为8dp，移动距离大于8dp才能出发MotionEent的Move事件
+    * hint_move_distance
+    * unlock_falsing_threshold 滑动解锁滑动距离的阈值
+    */
     protected void loadDimens() {
         final Resources res = getContext().getResources();
         final ViewConfiguration configuration = ViewConfiguration.get(getContext());
@@ -237,6 +243,9 @@ public abstract class PanelView extends FrameLayout {
         log("loadDimens(),mTouchSlop="+mTouchSlop+",mHintDistance="+mHintDistance+",mUnlockFalsingThreshold="+mUnlockFalsingThreshold);
     }
 
+    /*
+    * 用于计算速度时候的坐标转换
+    */
     private void trackMovement(MotionEvent event) {
         // Add movement to velocity tracker using raw screen X and Y coordinates instead
         // of window coordinates because the window frame may be moving at the same time.
@@ -248,6 +257,9 @@ public abstract class PanelView extends FrameLayout {
         event.offsetLocation(-deltaX, -deltaY);
     }
 
+    /*
+    * 用于唤醒和休眠的过程中
+    */
     public void setTouchDisabled(boolean disabled) {
         log("setTouchDisabled,disabled="+disabled);
         mTouchDisabled = disabled;
@@ -259,7 +271,10 @@ public abstract class PanelView extends FrameLayout {
             notifyExpandingFinished();
         }
     }
-
+    
+    /*
+    * 用于跟踪下拉通知栏耗时
+    */
     public void startExpandLatencyTracking() {
         log("startExpandLatencyTracking");
         if (LatencyTracker.isEnabled(mContext)) {
@@ -278,10 +293,11 @@ public abstract class PanelView extends FrameLayout {
 
         if (mInstantExpanding || mTouchDisabled
                 || (mMotionAborted && event.getActionMasked() != MotionEvent.ACTION_DOWN)) {
-            return false;
+            return false; // mTouchDisabled 此时处于唤醒或者休眠状态，不响应TouchEvent事件
         }
 
         // If dragging should not expand the notifications shade, then return false.
+        // 如果xml文件里面配置了config_enableNotificationShadeDrag为false，即通知面板不支持下拉操作，则不响应TouchEvent事件
         if (!mNotificationsDragEnabled) {
             if (mTracking) {
                 // Turn off tracking if it's on or the shade can get stuck in the down position.
@@ -421,6 +437,7 @@ public abstract class PanelView extends FrameLayout {
 
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
+                log("onTouchEvent,ACTION_UP");
                 trackMovement(event);
                 endMotionEvent(event, x, y, false /* forceCancel */);
                 break;
@@ -462,7 +479,7 @@ public abstract class PanelView extends FrameLayout {
 
     protected void startExpandMotion(float newX, float newY, boolean startTracking,
             float expandedHeight) {
-        log("startExpandMotion,newX="+newX+",newY="+newY+",startTracking="+startTracking+"expandedHeight="+expandedHeight);
+        log("startExpandMotion,newX="+newX+",newY="+newY+",startTracking="+startTracking+",expandedHeight="+expandedHeight);
         mInitialOffsetOnTouch = expandedHeight;
         mInitialTouchY = newY;
         mInitialTouchX = newX;
@@ -492,6 +509,14 @@ public abstract class PanelView extends FrameLayout {
             boolean expand = flingExpands(vel, vectorVel, x, y)
                     || event.getActionMasked() == MotionEvent.ACTION_CANCEL
                     || forceCancel;
+            /*
+            * Bug描述：锁屏界面，滑动解锁，滑动距离很长，速度很快的时候，很大概率解锁失败
+            * 问题分析：在此处打log，发现，每次解锁失败时，flingExpands函数都返回true，正常解锁时应该返回false
+            * 解决方案：TP存在断点现象，需要驱动优化TP 
+            * 补充：虽然存在TP断点，但在设置的开发者选项中打开Pointer Location时，从屏幕划线，看到的线条还是连起来的，具体原因待分析
+            */
+            log("endMotionEvent,flingExpands="+flingExpands(vel, vectorVel, x, y)+",event.getActionMasked()="+event.getActionMasked()+",forceCancel="+forceCancel);
+            log("endMotionEvent,mStatusBar.getBarState()="+mStatusBar.getBarState());
             DozeLog.traceFling(expand, mTouchAboveFalsingThreshold,
                     mStatusBar.isFalsingThresholdNeeded(),
                     mStatusBar.isWakeUpComingFromTouch());
@@ -656,6 +681,7 @@ public abstract class PanelView extends FrameLayout {
                 break;
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
+                log("onInterceptTouchEvent,ACTION_UP");
                 if (mVelocityTracker != null) {
                     mVelocityTracker.recycle();
                     mVelocityTracker = null;
@@ -727,10 +753,11 @@ public abstract class PanelView extends FrameLayout {
      * @return whether a fling should expands the panel; contracts otherwise
      */
     protected boolean flingExpands(float vel, float vectorVel, float x, float y) {
-        log("flingExpands");
+        log("flingExpands,vel="+vel+",vectorVel="+vectorVel+",x="+x+",y="+y);
         if (isFalseTouch(x, y)) {
             return true;
         }
+        log("flingExpands,getMinVelocityPxPerSecond="+mFlingAnimationUtils.getMinVelocityPxPerSecond());
         if (Math.abs(vectorVel) < mFlingAnimationUtils.getMinVelocityPxPerSecond()) {
             return getExpandedFraction() > 0.5f;
         } else {
@@ -745,6 +772,9 @@ public abstract class PanelView extends FrameLayout {
      */
     private boolean isFalseTouch(float x, float y) {
         log("isFalseTouch");
+        log("isFalseTouch,isFalsingThresholdNeeded="+mStatusBar.isFalsingThresholdNeeded()+",isClassiferEnabled="+mFalsingManager.isClassiferEnabled()
+        +",mFalsingManager.isFalseTouch()="+mFalsingManager.isFalseTouch()+",mTouchAboveFalsingThreshold="+mTouchAboveFalsingThreshold
+        +",mUpwardsWhenTresholdReached="+mUpwardsWhenTresholdReached+",isDirectionUpwards="+isDirectionUpwards(x, y));
         if (!mStatusBar.isFalsingThresholdNeeded()) {
             return false;
         }
@@ -922,6 +952,9 @@ public abstract class PanelView extends FrameLayout {
 
     public void setExpandedHeightInternal(float h) {
         log("setExpandedHeightInternal h="+h);
+        RuntimeException setExpandedHeightInternal = new RuntimeException("setExpandedHeightInternal");
+        setExpandedHeightInternal.fillInStackTrace();
+        Log.w(TAG, "Called: " , setExpandedHeightInternal);
         if (mExpandLatencyTracking && h != 0f) {
             DejankUtils.postAfterTraversal(() -> LatencyTracker.getInstance(mContext).onActionEnd(
                     LatencyTracker.ACTION_EXPAND_PANEL));

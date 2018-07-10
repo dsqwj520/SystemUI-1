@@ -37,6 +37,7 @@ import com.android.systemui.EventLogTags;
  * This is currently only in Keyguard so it can be shared between SystemUI and Keyguard, but
  * eventually we'd want to merge these two packages together so Keyguard can use common classes
  * that are shared with SystemUI.
+ * 用于跟踪各个阶段的耗时
  */
 public class LatencyTracker {
 

@@ -1033,6 +1033,7 @@ public class KeyguardViewMediator extends SystemUI {
      * Same semantics as {@link android.view.WindowManagerPolicy#enableKeyguard}; provide
      * a way for external stuff to override normal keyguard behavior.  For instance
      * the phone app disables the keyguard when it receives incoming calls.
+     * 用于提供给APP来实现上锁或者解锁，比如在锁屏界面来电，可以直接解锁接听
      */
     public void setKeyguardEnabled(boolean enabled) {
         synchronized (this) {
@@ -1159,6 +1160,7 @@ public class KeyguardViewMediator extends SystemUI {
 
     /**
      * Notify us when the keyguard is occluded by another window
+     * 当Keyguard被另外一个窗口遮挡时
      */
     public void setOccluded(boolean isOccluded, boolean animate) {
         Trace.beginSection("KeyguardViewMediator#setOccluded");

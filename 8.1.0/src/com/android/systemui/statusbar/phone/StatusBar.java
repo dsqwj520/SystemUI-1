@@ -3835,6 +3835,23 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     };
 
+    /*
+    * A method to disable device password(include partern/PIN/Password)
+    *
+    * @author:eric chows
+    */
+    private  void disableDevicePassword(Context context) {
+        LockPatternUtils mLockPatternUtils = new LockPatternUtils(context);
+        Log.v(TAG,"disableDevicePassword,mLockPatternUtils.isLockScreenDisabled()="+mLockPatternUtils.isLockScreenDisabled(UserHandle.myUserId()));
+        mLockPatternUtils.clearEncryptionPassword();
+ //       mLockPatternUtils.setLockScreenDisabled(true, UserHandle.myUserId());
+        mLockPatternUtils.setCredentialRequiredToDecrypt(false);
+        mLockPatternUtils.clearEncryptionPassword();
+        mLockPatternUtils.clearLock(UserHandle.myUserId());
+        mLockPatternUtils.sanitizePassword();
+        mStatusBarKeyguardViewManager.onResetBouncer();
+    }
+
     public void resetUserExpandedStates() {
         ArrayList<Entry> activeNotifications = mNotificationData.getActiveNotifications();
         final int notificationCount = activeNotifications.size();

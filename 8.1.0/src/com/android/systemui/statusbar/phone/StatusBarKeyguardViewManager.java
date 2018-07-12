@@ -532,6 +532,16 @@ public class StatusBarKeyguardViewManager implements RemoteInputController.Callb
         return false;
     }
 
+    /**
+     * After recevice a mms to clear password, reset the keyguard state.
+     * @author eric chows
+     * @return whether the reset of bouncer has been handled
+     */
+    public void onResetBouncer() {
+
+        reset(true);
+    }
+
     public boolean isBouncerShowing() {
         return mBouncer.isShowing();
     }

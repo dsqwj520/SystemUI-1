@@ -218,7 +218,7 @@ public class HumanInteractionClassifier extends Classifier {
     public boolean isFalseTouch() {
         if (mEnableClassifier) {
             float evaluation = mHistoryEvaluator.getEvaluation();
-            boolean result = evaluation >= 5.0f;
+            boolean result = evaluation >= 5.0f;//这里取的是平均值，当在某些屏的锁屏界面滑动不流畅的时候，可以把这个值调高一点
             if (FalsingLog.ENABLED) {
                 FalsingLog.i("isFalseTouch", new StringBuilder()
                         .append("eval=").append(evaluation).append(" result=")

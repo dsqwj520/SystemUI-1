@@ -109,7 +109,7 @@ public class TunerServiceImpl extends TunerService {
                         StatusBarIconController.getIconBlacklist(blacklistStr);
 
                 iconBlacklist.add("rotate");
-//                iconBlacklist.add("headset");
+//                iconBlacklist.add("headset");//headset
 
                 Settings.Secure.putStringForUser(mContentResolver,
                         StatusBarIconController.ICON_BLACKLIST,

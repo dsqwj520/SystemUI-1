@@ -1,0 +1,2 @@
+-basedirectory /home/zds/Code/snapdragon-spf30_X59
+-forceprocessing -include build/core/proguard.flags -dontobfuscate -dontoptimize -printmapping out/target/common/obj/APPS/SystemUI_intermediates/jack_dictionary -include out/target/common/obj/APPS/SystemUI_intermediates/proguard_options -include out/target/common/obj/APPS/SystemUI_intermediates/proguard_options -include frameworks/base/packages/SystemUI/proguard.flags

@@ -1,0 +1,6 @@
+out/target/common/obj/APPS/SystemUI_intermediates/src/com/android/systemui/recents/IRecentsNonSystemUserCallbacks.java : \
+  frameworks/base/packages/SystemUI/src/com/android/systemui/recents/IRecentsNonSystemUserCallbacks.aidl \
+  frameworks/base/graphics/java/android/graphics/Rect.aidl
+
+frameworks/base/packages/SystemUI/src/com/android/systemui/recents/IRecentsNonSystemUserCallbacks.aidl :
+frameworks/base/graphics/java/android/graphics/Rect.aidl :

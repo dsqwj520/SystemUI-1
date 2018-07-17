@@ -1,0 +1,879 @@
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedstep_fragment.xml:18
+-keep class android.support.v17.leanback.app.GuidedStepRootLayout { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/transition-v21/lb_guidedstep_activity_enter_bottom.xml:18
+-keep class android.support.v17.leanback.transition.FadeAndShortSlide { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/transition-v21/lb_details_enter_transition.xml:33
+# Referenced at frameworks/support/v17/leanback/res/transition-v21/lb_details_return_transition.xml:32
+-keep class android.support.v17.leanback.transition.ParallaxTransition { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/transition-v21/lb_title_in.xml:17
+# Referenced at frameworks/support/v17/leanback/res/transition-v21/lb_title_out.xml:17
+-keep class android.support.v17.leanback.transition.SlideKitkat { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/transition-v21/lb_details_enter_transition.xml:19
+# Referenced at frameworks/support/v17/leanback/res/transition-v21/lb_details_return_transition.xml:18
+-keep class android.support.v17.leanback.transition.SlideNoPropagation { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_browse_fragment.xml:24
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_details_fragment.xml:17
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_vertical_grid_fragment.xml:22
+-keep class android.support.v17.leanback.widget.BrowseFrameLayout { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_browse_fragment.xml:32
+-keep class android.support.v17.leanback.widget.BrowseRowsFrameLayout { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedactions_item.xml:23
+-keep class android.support.v17.leanback.widget.CheckableImageView { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_control_bar.xml:18
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_playback_controls.xml:38
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_playback_transport_controls.xml:28
+-keep class android.support.v17.leanback.widget.ControlBar { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidance.xml:22
+-keep class android.support.v17.leanback.widget.GuidanceStylingRelativeLayout { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedactions_item.xml:37
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedactions_item.xml:41
+-keep class android.support.v17.leanback.widget.GuidedActionEditText { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedactions_datepicker_item.xml:18
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedactions_item.xml:18
+-keep class android.support.v17.leanback.widget.GuidedActionItemContainer { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedactions.xml:36
+-keep class android.support.v17.leanback.widget.GuidedActionsRelativeLayout { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_details_overview.xml:76
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_fullwidth_details_overview.xml:54
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_list_row.xml:18
+-keep class android.support.v17.leanback.widget.HorizontalGridView { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_media_item_number_view_flipper.xml:36
+-keep class android.support.v17.leanback.widget.MediaNowPlayingView { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_row_media_item.xml:32
+-keep class android.support.v17.leanback.widget.MediaRowFocusView { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_details_fragment.xml:28
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_details_overview.xml:63
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_fullwidth_details_overview.xml:68
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedbuttonactions.xml:33
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedstep_fragment.xml:40
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedstep_fragment.xml:46
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_playback_fragment.xml:24
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_playback_fragment.xml:30
+-keep class android.support.v17.leanback.widget.NonOverlappingFrameLayout { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedactions_item.xml:33
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedstep_fragment.xml:68
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_row_container.xml:18
+-keep class android.support.v17.leanback.widget.NonOverlappingLinearLayout { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_image_card_view.xml:25
+-keep class android.support.v17.leanback.widget.NonOverlappingRelativeLayout { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedactions.xml:26
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedactions.xml:46
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedbuttonactions.xml:26
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedstep_background.xml:17
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedstep_fragment.xml:58
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_shadow.xml:18
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_shadow.xml:23
+-keep class android.support.v17.leanback.widget.NonOverlappingView { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_onboarding_fragment.xml:60
+-keep class android.support.v17.leanback.widget.PagingIndicator { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_playback_controls_row.xml:21
+-keep class android.support.v17.leanback.widget.PlaybackControlsRowView { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_playback_transport_controls_row.xml:71
+-keep class android.support.v17.leanback.widget.PlaybackTransportRowView { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_details_description.xml:26
+-keep class android.support.v17.leanback.widget.ResizingTextView { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_header.xml:18
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_row_header.xml:24
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_section_header.xml:18
+-keep class android.support.v17.leanback.widget.RowHeaderView { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_browse_fragment.xml:37
+-keep class android.support.v17.leanback.widget.ScaleFrameLayout { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_search_fragment.xml:27
+-keep class android.support.v17.leanback.widget.SearchBar { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_search_bar.xml:53
+-keep class android.support.v17.leanback.widget.SearchEditText { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_title_view.xml:37
+-keep class android.support.v17.leanback.widget.SearchOrbView { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_playback_transport_controls_row.xml:88
+-keep class android.support.v17.leanback.widget.SeekBar { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_search_bar.xml:18
+-keep class android.support.v17.leanback.widget.SpeechOrbView { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_playback_transport_controls_row.xml:61
+-keep class android.support.v17.leanback.widget.ThumbsBar { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_browse_title.xml:17
+-keep class android.support.v17.leanback.widget.TitleView { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedactions.xml:42
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedactions.xml:57
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedbuttonactions.xml:39
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_headers_fragment.xml:26
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_picker_column.xml:17
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_rows_fragment.xml:17
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_vertical_grid.xml:18
+-keep class android.support.v17.leanback.widget.VerticalGridView { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_video_surface.xml:17
+-keep class android.support.v17.leanback.widget.VideoSurfaceView { <init>(...); }
+
+# Referenced at frameworks/support/v17/leanback/res/layout/lb_guidedactions_datepicker_item.xml:34
+-keep class android.support.v17.leanback.widget.picker.DatePicker { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:559
+-keep class android.support.v4.content.FileProvider { <init>(...); }
+
+# Referenced at frameworks/base/packages/SettingsLib/res/layout/settings_with_drawer.xml:16
+-keep class android.support.v4.widget.DrawerLayout { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_alert_dialog_material.xml:41
+-keep class android.support.v4.widget.NestedScrollView { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_alert_dialog_button_bar_material.xml:43
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_alert_dialog_material.xml:52
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_alert_dialog_material.xml:66
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_alert_dialog_title_material.xml:56
+-keep class android.support.v4.widget.Space { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_select_dialog_material.xml:23
+-keep class android.support.v7.app.AlertController$RecycleListView { <init>(...); }
+
+# Referenced at frameworks/support/v7/mediarouter/res/layout/mr_volume_control.xml:43
+-keep class android.support.v7.app.MediaRouteExpandCollapseButton { <init>(...); }
+
+# Referenced at frameworks/support/v7/mediarouter/res/layout/mr_controller_volume_item.xml:43
+# Referenced at frameworks/support/v7/mediarouter/res/layout/mr_volume_control.xml:34
+-keep class android.support.v7.app.MediaRouteVolumeSlider { <init>(...); }
+
+# Referenced at frameworks/support/v7/mediarouter/res/layout/mr_controller_material_dialog_b.xml:87
+-keep class android.support.v7.app.OverlayListView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SettingsLib/res/layout/preference_two_target.xml:50
+# Referenced at frameworks/support/v14/preference/res/layout-v21/preference_dropdown_material.xml:47
+# Referenced at frameworks/support/v14/preference/res/layout-v21/preference_material.xml:41
+# Referenced at frameworks/support/v7/preference/res/layout-v11/preference.xml:32
+# Referenced at frameworks/support/v7/preference/res/layout-v11/preference_dropdown.xml:38
+-keep class android.support.v7.internal.widget.PreferenceImageView { <init>(...); }
+
+# Referenced at frameworks/support/v14/preference/res/layout/preference_widget_seekbar_material.xml:66
+# Referenced at frameworks/support/v7/preference/res/layout/preference_widget_seekbar.xml:66
+-keep class android.support.v7.preference.UnPressableLinearLayout { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_action_menu_item_layout.xml:17
+-keep class android.support.v7.view.menu.ActionMenuItemView { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_expanded_menu_layout.xml:17
+-keep class android.support.v7.view.menu.ExpandedMenuView { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_list_menu_item_layout.xml:17
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_popup_menu_item_layout.xml:17
+-keep class android.support.v7.view.menu.ListMenuItemView { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout-v26/abc_screen_toolbar.xml:27
+-keep class android.support.v7.widget.ActionBarContainer { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout-v26/abc_screen_toolbar.xml:44
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_action_mode_bar.xml:19
+-keep class android.support.v7.widget.ActionBarContextView { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout-v26/abc_screen_toolbar.xml:17
+-keep class android.support.v7.widget.ActionBarOverlayLayout { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_action_menu_layout.xml:17
+-keep class android.support.v7.widget.ActionMenuView { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_activity_chooser_view.xml:19
+-keep class android.support.v7.widget.ActivityChooserView$InnerLayout { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_alert_dialog_material.xml:18
+-keep class android.support.v7.widget.AlertDialogLayout { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_alert_dialog_button_bar_material.xml:26
+-keep class android.support.v7.widget.ButtonBarLayout { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_screen_content_include.xml:19
+-keep class android.support.v7.widget.ContentFrameLayout { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_alert_dialog_title_material.xml:45
+-keep class android.support.v7.widget.DialogTitle { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_screen_simple_overlay_action_mode.xml:23
+-keep class android.support.v7.widget.FitWindowsFrameLayout { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_dialog_title_material.xml:22
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_screen_simple.xml:17
+-keep class android.support.v7.widget.FitWindowsLinearLayout { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_customize_panel_content.xml:28
+# Referenced at frameworks/base/packages/SystemUI/res/layout/tuner_shortcut_list.xml:17
+# Referenced at frameworks/support/v7/preference/res/layout/preference_recyclerview.xml:18
+-keep class android.support.v7.widget.RecyclerView { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_search_view.xml:75
+-keep class android.support.v7.widget.SearchView$SearchAutoComplete { <init>(...); }
+
+# Referenced at frameworks/support/v7/preference/res/layout/preference_widget_switch_compat.xml:20
+-keep class android.support.v7.widget.SwitchCompat { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout-v26/abc_screen_toolbar.xml:37
+-keep class android.support.v7.widget.Toolbar { <init>(...); }
+
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_screen_simple.xml:25
+# Referenced at frameworks/support/v7/appcompat/res/layout/abc_screen_simple_overlay_action_mode.xml:32
+-keep class android.support.v7.widget.ViewStubCompat { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/foreground_service_title.xml:27
+-keep class com.android.internal.widget.DialogTitle { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pattern_view.xml:56
+-keep class com.android.internal.widget.LockPatternView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SettingsLib/res/layout/preference_category_material_settings.xml:34
+# Referenced at frameworks/base/packages/SettingsLib/res/layout/restricted_switch_preference.xml:36
+-keep class com.android.internal.widget.PreferenceImageView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pin_view.xml:202
+# Referenced at frameworks/base/packages/SystemUI/res/layout/car_navigation_button.xml:26
+# Referenced at frameworks/base/packages/SystemUI/res/layout/car_navigation_button.xml:35
+# Referenced at frameworks/base/packages/SystemUI/res/layout/volume_dialog.xml:62
+# Referenced at frameworks/base/packages/SystemUI/res/layout/volume_dialog_row.xml:39
+-keep class com.android.keyguard.AlphaOptimizedImageButton { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/keyguard_user_switcher_inner.xml:17
+# Referenced at frameworks/base/packages/SystemUI/res/layout/notification_icon_area.xml:17
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_detail_header.xml:17
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar.xml:61
+# Referenced at frameworks/base/packages/SystemUI/res/layout/system_icons.xml:23
+-keep class com.android.keyguard.AlphaOptimizedLinearLayout { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pin_view.xml:42
+-keep class com.android.keyguard.AlphaOptimizedRelativeLayout { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_emergency_carrier_area.xml:31
+# Referenced at frameworks/base/packages/SystemUI/res/layout/keyguard_status_bar.xml:57
+# Referenced at frameworks/base/packages/SystemUI/res/layout/quick_status_bar_header_system_icons.xml:31
+-keep class com.android.keyguard.CarrierText { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_emergency_carrier_area.xml:40
+-keep class com.android.keyguard.EmergencyButton { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_emergency_carrier_area.xml:21
+-keep class com.android.keyguard.EmergencyCarrierArea { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_esim_area.xml:21
+-keep class com.android.keyguard.KeyguardEsimArea { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_host_view.xml:22
+-keep class com.android.keyguard.KeyguardHostView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_message_area.xml:21
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_message_area_large.xml:21
+-keep class com.android.keyguard.KeyguardMessageArea { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pin_view.xml:20
+-keep class com.android.keyguard.KeyguardPINView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_password_view.xml:19
+-keep class com.android.keyguard.KeyguardPasswordView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pattern_view.xml:23
+-keep class com.android.keyguard.KeyguardPatternView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_host_view.xml:33
+-keep class com.android.keyguard.KeyguardSecurityContainer { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_host_view.xml:42
+-keep class com.android.keyguard.KeyguardSecurityViewFlipper { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_pin_view.xml:20
+-keep class com.android.keyguard.KeyguardSimPinView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_puk_view.xml:21
+-keep class com.android.keyguard.KeyguardSimPukView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_presentation.xml:28
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_status_view.xml:21
+-keep class com.android.keyguard.KeyguardStatusView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pin_view.xml:93
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pin_view.xml:101
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pin_view.xml:109
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pin_view.xml:125
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pin_view.xml:133
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pin_view.xml:141
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pin_view.xml:157
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pin_view.xml:165
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pin_view.xml:173
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pin_view.xml:194
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_pin_view.xml:105
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_pin_view.xml:113
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_pin_view.xml:121
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_pin_view.xml:136
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_pin_view.xml:144
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_pin_view.xml:152
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_pin_view.xml:167
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_pin_view.xml:175
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_pin_view.xml:183
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_pin_view.xml:203
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_puk_view.xml:106
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_puk_view.xml:114
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_puk_view.xml:122
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_puk_view.xml:137
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_puk_view.xml:145
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_puk_view.xml:153
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_puk_view.xml:168
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_puk_view.xml:176
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_puk_view.xml:184
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_puk_view.xml:204
+-keep class com.android.keyguard.NumPadKey { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_pin_view.xml:49
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_pin_view.xml:62
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_sim_puk_view.xml:63
+-keep class com.android.keyguard.PasswordTextView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SettingsLib/res/layout/preference_footer.xml:44
+-keep class com.android.settingslib.widget.LinkTextView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/quick_status_bar_header_system_icons.xml:43
+# Referenced at frameworks/base/packages/SystemUI/res/layout/system_icons.xml:34
+-keep class com.android.systemui.BatteryMeterView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_status_view.xml:53
+-keep class com.android.systemui.ChargingView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:435
+-keep class com.android.systemui.DessertCase { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:466
+-keep class com.android.systemui.DessertCaseDream { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:533
+-keep class com.android.systemui.ForegroundServicesDialog { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/global_actions_wrapped.xml:2
+-keep class com.android.systemui.HardwareUiLayout { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:260
+-keep class com.android.systemui.ImageWallpaper { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_detail_header.xml:29
+-keep class com.android.systemui.ResizingSpace { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:499
+-keep class com.android.systemui.Somnambulator { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:203
+-keep class com.android.systemui.SystemUIApplication { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:231
+-keep class com.android.systemui.SystemUISecondaryUserService { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:224
+-keep class com.android.systemui.SystemUIService { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:251
+-keep class com.android.systemui.SysuiRestartReceiver { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/assist_orb.xml:21
+-keep class com.android.systemui.assist.AssistOrbContainer { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/assist_orb.xml:33
+-keep class com.android.systemui.assist.AssistOrbView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:545
+-keep class com.android.systemui.doze.DozeService { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/mland.xml:22
+-keep class com.android.systemui.egg.MLand { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:450
+-keep class com.android.systemui.egg.MLandActivity { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:480
+-keep class com.android.systemui.keyguard.KeyguardService { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:485
+-keep class com.android.systemui.keyguard.WorkLockActivity { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:398
+-keep class com.android.systemui.media.MediaProjectionPermissionActivity { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:387
+-keep class com.android.systemui.net.NetworkOverLimitActivity { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:420
+-keep class com.android.systemui.pip.phone.PipMenuActivity { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/tv_pip_controls.xml:23
+# Referenced at frameworks/base/packages/SystemUI/res/layout/tv_pip_controls.xml:30
+# Referenced at frameworks/base/packages/SystemUI/res/layout/tv_pip_controls.xml:38
+# Referenced at frameworks/base/packages/SystemUI/res/layout/tv_pip_custom_control.xml:19
+-keep class com.android.systemui.pip.tv.PipControlButtonView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/tv_pip_menu.xml:29
+-keep class com.android.systemui.pip.tv.PipControlsView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:407
+-keep class com.android.systemui.pip.tv.PipMenuActivity { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_detail_items.xml:26
+-keep class com.android.systemui.qs.AutoSizingList { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/data_usage.xml:37
+-keep class com.android.systemui.qs.DataUsageGraph { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_detail.xml:45
+-keep class com.android.systemui.qs.NonInterceptingScrollView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_page_indicator.xml:17
+-keep class com.android.systemui.qs.PageIndicator { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_paged_tile_layout.xml:18
+-keep class com.android.systemui.qs.PagedTileLayout { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_paged_page.xml:17
+-keep class com.android.systemui.qs.PagedTileLayout$TilePage { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_panel.xml:16
+-keep class com.android.systemui.qs.QSContainerImpl { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_detail.xml:18
+-keep class com.android.systemui.qs.QSDetail { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_detail_items.xml:18
+-keep class com.android.systemui.qs.QSDetailItems { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_footer_impl.xml:19
+-keep class com.android.systemui.qs.QSFooterImpl { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_panel.xml:26
+-keep class com.android.systemui.qs.QSPanel { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/quick_status_bar_expanded_header.xml:35
+-keep class com.android.systemui.qs.QuickQSPanel { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/quick_status_bar_expanded_header.xml:19
+-keep class com.android.systemui.qs.QuickStatusBarHeader { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_tile_layout.xml:18
+-keep class com.android.systemui.qs.TileLayout { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/car_qs_footer.xml:17
+-keep class com.android.systemui.qs.car.CarQSFooter { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/car_status_bar_header.xml:17
+-keep class com.android.systemui.qs.car.CarStatusBarHeader { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_customize_panel.xml:19
+-keep class com.android.systemui.qs.customize.QSCustomizer { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_tile_label.xml:17
+-keep class com.android.systemui.qs.tileimpl.ButtonRelativeLayout { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/data_usage.xml:17
+-keep class com.android.systemui.qs.tiles.DataUsageDetailView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/keyguard_user_switcher_item.xml:20
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_user_detail_item.xml:20
+-keep class com.android.systemui.qs.tiles.UserDetailItemView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_user_detail.xml:20
+-keep class com.android.systemui.qs.tiles.UserDetailView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:298
+-keep class com.android.systemui.recents.RecentsActivity { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:293
+-keep class com.android.systemui.recents.RecentsSystemUserService { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/recents_task_view_header.xml:24
+# Referenced at frameworks/base/packages/SystemUI/res/layout/recents_task_view_header.xml:48
+# Referenced at frameworks/base/packages/SystemUI/res/layout/recents_task_view_header.xml:58
+# Referenced at frameworks/base/packages/SystemUI/res/layout/recents_task_view_header_overlay.xml:21
+# Referenced at frameworks/base/packages/SystemUI/res/layout/recents_task_view_header_overlay.xml:44
+-keep class com.android.systemui.recents.views.FixedSizeImageView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/recents.xml:22
+-keep class com.android.systemui.recents.views.RecentsView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/recents_task_view.xml:16
+-keep class com.android.systemui.recents.views.TaskView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/recents_task_view_header.xml:18
+-keep class com.android.systemui.recents.views.TaskViewHeader { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/recents_task_view.xml:21
+-keep class com.android.systemui.recents.views.TaskViewThumbnail { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/recents_grid_task_view.xml:16
+-keep class com.android.systemui.recents.views.grid.GridTaskView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/recents_grid_task_view.xml:21
+-keep class com.android.systemui.recents.views.grid.GridTaskViewThumbnail { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:333
+-keep class com.android.systemui.screenshot.GlobalScreenshot$DeleteScreenshotReceiver { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:323
+-keep class com.android.systemui.screenshot.GlobalScreenshot$ShareReceiver { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:328
+-keep class com.android.systemui.screenshot.GlobalScreenshot$TargetChosenReceiver { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/global_screenshot.xml:36
+-keep class com.android.systemui.screenshot.ScreenshotSelectorView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:243
+-keep class com.android.systemui.screenshot.ScreenshotServiceErrorReceiver { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:238
+-keep class com.android.systemui.screenshot.TakeScreenshotService { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:519
+-keep class com.android.systemui.settings.BrightnessDialog { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_toggle_slider.xml:34
+-keep class com.android.systemui.settings.ToggleSeekBar { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/quick_settings_brightness_dialog.xml:34
+-keep class com.android.systemui.settings.ToggleSliderView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/docked_stack_divider.xml:32
+-keep class com.android.systemui.stackdivider.DividerHandleView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/docked_stack_divider.xml:17
+-keep class com.android.systemui.stackdivider.DividerView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:313
+-keep class com.android.systemui.stackdivider.ForcedResizableInfoActivity { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/docked_stack_divider.xml:27
+-keep class com.android.systemui.stackdivider.MinimizedDockShadow { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_alarm_group.xml:49
+-keep class com.android.systemui.statusbar.AlphaOptimizedButton { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_footer_impl.xml:76
+# Referenced at frameworks/base/packages/SystemUI/res/layout/recents_task_view_lock_to_app.xml:16
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar.xml:54
+-keep class com.android.systemui.statusbar.AlphaOptimizedFrameLayout { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_detail.xml:35
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_footer_impl.xml:63
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_footer_impl.xml:93
+# Referenced at frameworks/base/packages/SystemUI/res/layout/quick_status_bar_expanded_header.xml:51
+# Referenced at frameworks/base/packages/SystemUI/res/layout/signal_cluster_view.xml:43
+# Referenced at frameworks/base/packages/SystemUI/res/layout/signal_cluster_view.xml:49
+# Referenced at frameworks/base/packages/SystemUI/res/layout/signal_cluster_view.xml:82
+# Referenced at frameworks/base/packages/SystemUI/res/layout/signal_cluster_view.xml:88
+# Referenced at frameworks/base/packages/SystemUI/res/layout/signal_cluster_view.xml:123
+# Referenced at frameworks/base/packages/SystemUI/res/layout/signal_cluster_view.xml:130
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_alarm_group.xml:38
+-keep class com.android.systemui.statusbar.AlphaOptimizedImageView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/assist_orb.xml:26
+# Referenced at frameworks/base/packages/SystemUI/res/layout/assist_orb.xml:44
+# Referenced at frameworks/base/packages/SystemUI/res/layout/notification_children_divider.xml:18
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_expanded.xml:85
+# Referenced at frameworks/base/packages/SystemUI/res/layout/super_status_bar.xml:53
+-keep class com.android.systemui.statusbar.AlphaOptimizedView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/connected_device_signal.xml:28
+# Referenced at frameworks/base/packages/SystemUI/res/layout/mobile_signal_group.xml:68
+# Referenced at frameworks/base/packages/SystemUI/res/layout/mobile_signal_group.xml:75
+-keep class com.android.systemui.statusbar.AnimatedImageView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/super_status_bar.xml:28
+-keep class com.android.systemui.statusbar.BackDropView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_notification_dismiss_all.xml:18
+-keep class com.android.systemui.statusbar.DismissView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_notification_dismiss_all.xml:24
+-keep class com.android.systemui.statusbar.DismissViewButton { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_no_notifications.xml:18
+-keep class com.android.systemui.statusbar.EmptyShadeView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_notification_row.xml:18
+-keep class com.android.systemui.statusbar.ExpandableNotificationRow { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/keyboard_shortcut_app_item.xml:17
+-keep class com.android.systemui.statusbar.KeyboardShortcutAppItemLayout { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/keyboard_shortcut_app_item.xml:49
+-keep class com.android.systemui.statusbar.KeyboardShortcutKeysLayout { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:569
+-keep class com.android.systemui.statusbar.KeyboardShortcutsReceiver { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/keyguard_bottom_area.xml:73
+# Referenced at frameworks/base/packages/SystemUI/res/layout/keyguard_bottom_area.xml:83
+-keep class com.android.systemui.statusbar.KeyguardAffordanceView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_notification_row.xml:28
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_notification_row.xml:33
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_notification_shelf.xml:26
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_notification_shelf.xml:30
+-keep class com.android.systemui.statusbar.NotificationBackgroundView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_notification_row.xml:38
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_notification_row.xml:42
+-keep class com.android.systemui.statusbar.NotificationContentView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/notification_guts.xml:18
+-keep class com.android.systemui.statusbar.NotificationGuts { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/notification_info.xml:18
+-keep class com.android.systemui.statusbar.NotificationInfo { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_notification_shelf.xml:18
+-keep class com.android.systemui.statusbar.NotificationShelf { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/notification_snooze.xml:18
+-keep class com.android.systemui.statusbar.NotificationSnooze { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/super_status_bar.xml:46
+# Referenced at frameworks/base/packages/SystemUI/res/layout/super_status_bar.xml:78
+-keep class com.android.systemui.statusbar.ScrimView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/signal_cluster_view.xml:20
+-keep class com.android.systemui.statusbar.SignalClusterView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/car_navigation_bar.xml:20
+-keep class com.android.systemui.statusbar.car.CarNavigationBarView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/car_navigation_button.xml:20
+-keep class com.android.systemui.statusbar.car.CarNavigationButton { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/car_fullscreen_user_switcher.xml:59
+-keep class com.android.systemui.statusbar.car.PageIndicator { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/car_fullscreen_user_switcher.xml:51
+# Referenced at frameworks/base/packages/SystemUI/res/layout/car_qs_panel.xml:29
+-keep class com.android.systemui.statusbar.car.UserGridView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_notification_row.xml:73
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_notification_shelf.xml:42
+-keep class com.android.systemui.statusbar.notification.FakeShadowView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/hybrid_notification.xml:18
+-keep class com.android.systemui.statusbar.notification.HybridNotificationView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_footer_impl.xml:105
+# Referenced at frameworks/base/packages/SystemUI/res/layout/tuner_shortcut_item.xml:40
+-keep class com.android.systemui.statusbar.phone.ExpandableIndicator { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/keyguard_bottom_area.xml:18
+-keep class com.android.systemui.statusbar.phone.KeyguardBottomAreaView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/keyguard_bottom_area.xml:36
+# Referenced at frameworks/base/packages/SystemUI/res/layout/keyguard_bottom_area.xml:46
+-keep class com.android.systemui.statusbar.phone.KeyguardIndicationTextView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/keyguard_status_bar.xml:19
+-keep class com.android.systemui.statusbar.phone.KeyguardStatusBarView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/keyguard_bottom_area.xml:93
+-keep class com.android.systemui.statusbar.phone.LockIcon { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/car_qs_footer.xml:32
+# Referenced at frameworks/base/packages/SystemUI/res/layout/keyguard_status_bar.xml:28
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_footer_impl.xml:47
+-keep class com.android.systemui.statusbar.phone.MultiUserSwitch { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/navigation_bar_window.xml:19
+-keep class com.android.systemui.statusbar.phone.NavigationBarFrame { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/navigation_bar.xml:27
+-keep class com.android.systemui.statusbar.phone.NavigationBarInflaterView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/navigation_bar.xml:20
+-keep class com.android.systemui.statusbar.phone.NavigationBarView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/navigation_layout.xml:27
+# Referenced at frameworks/base/packages/SystemUI/res/layout/navigation_layout_rot90.xml:27
+-keep class com.android.systemui.statusbar.phone.NearestTouchFrame { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/notification_icon_area.xml:22
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_notification_shelf.xml:34
+-keep class com.android.systemui.statusbar.phone.NotificationIconContainer { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_expanded.xml:20
+-keep class com.android.systemui.statusbar.phone.NotificationPanelView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_expanded.xml:32
+-keep class com.android.systemui.statusbar.phone.NotificationsQuickSettingsContainer { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar.xml:21
+-keep class com.android.systemui.statusbar.phone.PhoneStatusBarView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/navigation_layout_rot90.xml:32
+# Referenced at frameworks/base/packages/SystemUI/res/layout/navigation_layout_rot90.xml:39
+-keep class com.android.systemui.statusbar.phone.ReverseLinearLayout { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/car_qs_footer.xml:59
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_footer_impl.xml:83
+-keep class com.android.systemui.statusbar.phone.SettingsButton { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/super_status_bar.xml:21
+-keep class com.android.systemui.statusbar.phone.StatusBarWindowView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/keyguard_user_switcher_item.xml:39
+# Referenced at frameworks/base/packages/SystemUI/res/layout/qs_user_detail_item.xml:35
+-keep class com.android.systemui.statusbar.phone.UserAvatarView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/car_status_bar_header.xml:33
+# Referenced at frameworks/base/packages/SystemUI/res/layout/quick_status_bar_header_system_icons.xml:48
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar.xml:69
+-keep class com.android.systemui.statusbar.policy.Clock { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res-keyguard/layout/keyguard_status_area.xml:28
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_alarm_group.xml:28
+-keep class com.android.systemui.statusbar.policy.DateView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout-sw600dp/navigation_layout_rot90.xml:44
+# Referenced at frameworks/base/packages/SystemUI/res/layout/navigation_layout.xml:49
+# Referenced at frameworks/base/packages/SystemUI/res/layout/navigation_layout_rot90.xml:49
+-keep class com.android.systemui.statusbar.policy.DeadZone { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/emergency_cryptkeeper_text.xml:18
+-keep class com.android.systemui.statusbar.policy.EmergencyCryptkeeperText { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/back.xml:17
+# Referenced at frameworks/base/packages/SystemUI/res/layout/custom_key.xml:16
+# Referenced at frameworks/base/packages/SystemUI/res/layout/home.xml:16
+# Referenced at frameworks/base/packages/SystemUI/res/layout/menu_ime.xml:23
+# Referenced at frameworks/base/packages/SystemUI/res/layout/menu_ime.xml:34
+# Referenced at frameworks/base/packages/SystemUI/res/layout/menu_ime.xml:43
+# Referenced at frameworks/base/packages/SystemUI/res/layout/recent_apps.xml:17
+-keep class com.android.systemui.statusbar.policy.KeyButtonView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/keyguard_user_switcher.xml:17
+-keep class com.android.systemui.statusbar.policy.KeyguardUserSwitcher$Container { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/remote_input.xml:20
+-keep class com.android.systemui.statusbar.policy.RemoteInputView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/remote_input.xml:27
+-keep class com.android.systemui.statusbar.policy.RemoteInputView$RemoteEditText { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/split_clock_view.xml:19
+-keep class com.android.systemui.statusbar.policy.SplitClockView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/notification_children_container.xml:18
+-keep class com.android.systemui.statusbar.stack.NotificationChildrenContainer { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/status_bar_expanded.xml:50
+-keep class com.android.systemui.statusbar.stack.NotificationStackScrollLayout { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:85
+-keep class com.android.systemui.tuner.BatteryPreference { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/clipboard.xml:16
+-keep class com.android.systemui.tuner.ClipboardView { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:96
+-keep class com.android.systemui.tuner.ClockPreference { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/nav_bar_tuner_inflater.xml:16
+-keep class com.android.systemui.tuner.PreviewNavInflater { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/xml/nav_bar_tuner.xml:21
+# Referenced at frameworks/base/packages/SystemUI/res/xml/nav_bar_tuner.xml:29
+# Referenced at frameworks/base/packages/SystemUI/res/xml/nav_bar_tuner.xml:42
+# Referenced at frameworks/base/packages/SystemUI/res/xml/nav_bar_tuner.xml:48
+# Referenced at frameworks/base/packages/SystemUI/res/xml/nav_bar_tuner.xml:61
+-keep class com.android.systemui.tuner.RadioListPreference { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:25
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:29
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:33
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:41
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:45
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:49
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:57
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:63
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:67
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:71
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:75
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:79
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:90
+-keep class com.android.systemui.tuner.StatusBarSwitch { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:264
+-keep class com.android.systemui.tuner.TunerActivity { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:551
+-keep class com.android.systemui.tuner.TunerService$ClearReceiver { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/xml/lockscreen_settings.xml:27
+# Referenced at frameworks/base/packages/SystemUI/res/xml/lockscreen_settings.xml:37
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:109
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:116
+# Referenced at frameworks/base/packages/SystemUI/res/xml/tuner_prefs.xml:128
+-keep class com.android.systemui.tuner.TunerSwitch { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/tuner_zen_mode_panel.xml:18
+-keep class com.android.systemui.tuner.TunerZenModePanel { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:365
+-keep class com.android.systemui.usb.UsbAccessoryUriActivity { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:338
+-keep class com.android.systemui.usb.UsbConfirmActivity { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:374
+-keep class com.android.systemui.usb.UsbDebuggingActivity { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:380
+-keep class com.android.systemui.usb.UsbDebuggingSecondaryUserActivity { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:347
+-keep class com.android.systemui.usb.UsbPermissionActivity { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/AndroidManifest.xml:356
+-keep class com.android.systemui.usb.UsbResolverActivity { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/zen_mode_panel.xml:32
+-keep class com.android.systemui.volume.SegmentedButtons { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/volume_zen_footer.xml:16
+-keep class com.android.systemui.volume.ZenFooter { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/zen_mode_panel.xml:18
+-keep class com.android.systemui.volume.ZenModePanel { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/zen_mode_panel.xml:96
+-keep class com.android.systemui.volume.ZenRadioLayout { <init>(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/mland.xml:73
+-keepclassmembers class * { *** playerMinus(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/mland.xml:92
+-keepclassmembers class * { *** playerPlus(...); }
+
+# Referenced at frameworks/base/packages/SystemUI/res/layout/mland.xml:35
+-keepclassmembers class * { *** startButtonPressed(...); }
+
